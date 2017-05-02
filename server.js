@@ -14,28 +14,28 @@ var server = http.createServer(function (request, response) {
     if (randomNumber > 0.7) {
       response.end('<h1>Here is a joke1.</h1>' +
       '<p id="joke"> knock knock. Whos there? Deja. Deja who? Knock knock.</p>' +
-      '<a href="http://localhost:8080/">Home</a>')
-    } else if (randomNumber > 0.5) {
+      '<a href="/">Home</a>')
+    } else if (randomNumber > 0.4) {
       response.end('<h1>Here is a joke2.</h1>' +
       '<p id="joke"> Knock, knock. Whos there? No one. No one who? (Remain silent)</p>' +
-      '<a href="http://localhost:8080/">Home</a>')
-    } else if (randomNumber < 0.3) {
+      '<a href="/">Home</a>')
+    } else {
       response.end('<h1>Here is a joke3.</h1>' +
       '<p id="joke"> Whos there? Double. Double who? W!</p>' +
-      '<a href="http://localhost:8080/">Home</a>')
+      '<a href="/">Home</a>')
     }
   } else if (request.url === '/cuteness') {
     response.end('<h1>A cute pupper.</h1>' +
       '<img src="http://i.imgur.com/VUECagM.jpg" alt="doggy" width="500">' +
       '<br>' +
-      '<a href="http://localhost:8080/">Home</a>')
+      '<a href="/">Home</a>')
   } else {
     response.end('<h1>404. That is an error.</h3>' +
     '<p>The requested URL: ' + request.url + ' was not found on this server.</p>' +
     '<br>' +
     '<img src="http://fullspoonrising.com/wp-content/uploads/2014/08/116839.jpg" alt="sorry">' +
     '<br>' +
-    '<a href="http://localhost:8080/">Home</a>')
+    '<a href="/">Home</a>')
   }
 })
 
@@ -45,4 +45,4 @@ var port = process.env.PORT || 8080
 server.listen(port)
 
 // Output a friendly message to the terminal
-console.log('Server running at http://localhost:' + port + '/')
+console.log('Server running at port ' + port)
